@@ -20,8 +20,7 @@ struct NetworkProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<NetworkTimelineEntry>) -> Void) {
         let snapshot = store.load()
         let entry = NetworkTimelineEntry(date: .now, snapshot: snapshot)
-        let nextRefresh = Date().addingTimeInterval(60)
-        completion(Timeline(entries: [entry], policy: .after(nextRefresh)))
+        completion(Timeline(entries: [entry], policy: .after(Date().addingTimeInterval(15 * 60))))
     }
 }
 
@@ -32,7 +31,7 @@ struct NetworkWidget: Widget {
                 .containerBackground(.background, for: .widget)
         }
         .configurationDisplayName("Network Status")
-        .description("Shows recent upload and download speed.")
+        .description("Shows the latest saved upload and download speed.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -52,19 +51,21 @@ private struct NetworkWidgetView: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(snapshot.networkKind.displayName)
                         .font(.caption.weight(.semibold))
-                    Text(snapshot.sampledAt, style: .time)
+                    Text(updatedText)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                 }
             }
         case .accessoryInline:
-            Text("↓ \(snapshot.downloadBytesPerSecond.speedText) ↑ \(snapshot.uploadBytesPerSecond.speedText)")
+            Text("Down \(snapshot.downloadBytesPerSecond.speedText) Up \(snapshot.uploadBytesPerSecond.speedText)")
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 3) {
                 Text(snapshot.networkKind.displayName)
                     .font(.caption.weight(.semibold))
-                Text("↓ \(snapshot.downloadBytesPerSecond.speedText)")
-                Text("↑ \(snapshot.uploadBytesPerSecond.speedText)")
+                Text("Down \(snapshot.downloadBytesPerSecond.speedText)")
+                Text("Up \(snapshot.uploadBytesPerSecond.speedText)")
+                Text(updatedText)
+                    .foregroundStyle(.secondary)
             }
             .font(.caption2.monospacedDigit())
         default:
@@ -74,12 +75,20 @@ private struct NetworkWidgetView: View {
                     .foregroundStyle(.secondary)
                 MetricRow(systemImage: "arrow.down", value: snapshot.downloadBytesPerSecond.speedText)
                 MetricRow(systemImage: "arrow.up", value: snapshot.uploadBytesPerSecond.speedText)
-                Text(snapshot.sampledAt, style: .time)
+                Text(updatedText)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
+    }
+
+    private var updatedText: String {
+        guard snapshot.sampledAt != .distantPast else {
+            return "No sample yet"
+        }
+
+        return "Updated \(snapshot.sampledAt.formatted(date: .omitted, time: .shortened))"
     }
 }
 

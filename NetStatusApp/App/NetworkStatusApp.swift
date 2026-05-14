@@ -8,7 +8,7 @@ struct NetworkStatusApp: App {
         WindowGroup {
             ContentView(monitor: monitor)
                 .task {
-                    await monitor.start()
+                    monitor.start()
                 }
         }
     }

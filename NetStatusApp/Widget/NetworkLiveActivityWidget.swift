@@ -17,9 +17,15 @@ struct NetworkLiveActivityWidget: Widget {
                     IslandMetric(title: "Up", value: context.state.snapshot.uploadBytesPerSecond.speedText, systemImage: "arrow.up")
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text(context.state.snapshot.networkKind.displayName)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    HStack {
+                        Label("Live", systemImage: "dot.radiowaves.left.and.right")
+                            .foregroundStyle(.green)
+                        Spacer()
+                        Text(context.state.snapshot.networkKind.displayName)
+                        Text(context.state.snapshot.sampledAt, style: .time)
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
                 }
             } compactLeading: {
                 Image(systemName: "arrow.down")
@@ -44,9 +50,13 @@ private struct LockScreenNetworkView: View {
             Divider().overlay(.white.opacity(0.25))
             IslandMetric(title: "Upload", value: snapshot.uploadBytesPerSecond.speedText, systemImage: "arrow.up")
             Spacer(minLength: 0)
-            Text(snapshot.networkKind.displayName)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
+            VStack(alignment: .trailing, spacing: 3) {
+                Label("Live", systemImage: "dot.radiowaves.left.and.right")
+                    .foregroundStyle(.green)
+                Text(snapshot.sampledAt, style: .time)
+                    .foregroundStyle(.secondary)
+            }
+            .font(.caption.weight(.semibold))
         }
         .padding(.horizontal)
         .padding(.vertical, 12)

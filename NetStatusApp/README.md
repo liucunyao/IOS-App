@@ -1,69 +1,48 @@
-# Network Status iOS App Skeleton
+# Network Status
 
-This workspace contains the source skeleton for a simple iOS app that monitors current network throughput and presents it in:
+Network Status is an iOS 26+ SwiftUI app for monitoring current device network throughput.
 
-- the main SwiftUI app
-- Home Screen widgets
-- Lock Screen widgets
-- Live Activities
-- Dynamic Island
+## What is real time
 
-## Xcode Setup
+- Main app: samples upload and download speed once per second while monitoring is active.
+- Lock Screen and Dynamic Island: updated through ActivityKit Live Activities.
+- Home Screen widget: shows the latest saved sample from App Group storage. WidgetKit does not support guaranteed continuous per-second updates for regular widgets, so this surface intentionally labels the data as the latest sample.
 
-Create a new iOS app project in Xcode, then add a Widget Extension with Live Activity support.
+## Project layout
 
-Suggested settings:
+- `NetworkStatus.xcodeproj`: Xcode project with the app target and widget extension target.
+- `NetworkStatus.xcodeproj/xcshareddata/xcschemes/NetworkStatus.xcscheme`: shared app scheme.
+- `App/`: SwiftUI app, iOS 26 glass-oriented UI, monitoring lifecycle, Live Activity updates.
+- `App/Assets.xcassets`: app accent color. Add a real AppIcon before distribution.
+- `Shared/`: network snapshot model, App Group store, sampler, ActivityKit attributes.
+- `Widget/`: regular widgets plus Lock Screen, Dynamic Island, and Live Activity UI.
 
-- Product name: `NetworkStatus`
-- Interface: `SwiftUI`
-- Minimum deployment: iOS 17.0
+## Required signing changes
+
+Before running on a real device, replace the placeholder identifiers:
+
+- App bundle identifier: `com.example.NetworkStatus`
+- Widget bundle identifier: `com.example.NetworkStatus.widget`
 - App Group: `group.com.example.NetStatus`
 
-Replace `group.com.example.NetStatus` in `Shared/NetworkSnapshotStore.swift` with your real App Group identifier.
+Update the same App Group value in:
 
-## Target Membership
-
-Add these files to both the app target and widget extension target:
-
-- `Shared/NetworkSnapshot.swift`
 - `Shared/NetworkSnapshotStore.swift`
-- `Shared/NetworkActivityAttributes.swift`
-- `Shared/NetworkSurfaceConstants.swift`
+- `App/NetworkStatus.entitlements`
+- `Widget/NetworkStatusWidget.entitlements`
 
-Add this file to the app target only:
+Enable these capabilities in Xcode for the matching targets:
 
-- `Shared/NetworkSpeedSampler.swift`
-- `App/NetworkStatusApp.swift`
-- `App/NetworkStatusModel.swift`
-- `App/ContentView.swift`
+- App target: App Groups, Live Activities
+- Widget target: App Groups
 
-Add these files to the widget extension target only:
+Add a production `AppIcon` asset before archiving for TestFlight or App Store distribution.
 
-- `Widget/NetworkWidgetBundle.swift`
-- `Widget/NetworkWidget.swift`
-- `Widget/NetworkLiveActivityWidget.swift`
+The app target includes:
 
-## Capabilities
+- `NSSupportsLiveActivities`
+- `NSSupportsLiveActivitiesFrequentUpdates`
 
-Enable these capabilities:
+## Validation
 
-- App target: App Groups
-- Widget extension target: App Groups
-- App target: Live Activities
-
-Add this key to the app target `Info.plist`:
-
-```xml
-<key>NSSupportsLiveActivities</key>
-<true/>
-```
-
-## Runtime Model
-
-The app samples interface byte counters once per second while running. Each sample is written into App Group storage. The widget reads the most recent sample from that shared store. The Live Activity is updated through ActivityKit, which drives Lock Screen and Dynamic Island presentation.
-
-For a simple App Store-friendly first version, keep monitoring user-initiated: the user opens the app, starts monitoring, and the app keeps Live Activity surfaces updated while iOS allows the activity to run.
-
-## Product Notes
-
-Home Screen widgets are best treated as "recent status" surfaces. Lock Screen and Dynamic Island should be the primary near-live surfaces because ActivityKit is designed for live data presentation.
+This repository was updated from a Windows workspace, where `xcodebuild` and the iOS simulator are not available. Final validation must be done on macOS with Xcode 26 and an iOS 26 device or simulator.

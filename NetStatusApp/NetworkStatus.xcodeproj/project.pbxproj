@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		101000000000000000000001 /* NetworkStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000001 /* NetworkStatusApp.swift */; };
+		101000000000000000000002 /* NetworkStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000002 /* NetworkStatusModel.swift */; };
+		101000000000000000000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000003 /* ContentView.swift */; };
+		101000000000000000000004 /* NetworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000004 /* NetworkSnapshot.swift */; };
+		101000000000000000000005 /* NetworkSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000005 /* NetworkSnapshotStore.swift */; };
+		101000000000000000000006 /* NetworkSpeedSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000006 /* NetworkSpeedSampler.swift */; };
+		101000000000000000000007 /* NetworkActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000007 /* NetworkActivityAttributes.swift */; };
+		101000000000000000000008 /* NetworkSurfaceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000008 /* NetworkSurfaceConstants.swift */; };
+		101000000000000000000009 /* NetworkWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000009 /* NetworkWidgetBundle.swift */; };
+		10100000000000000000000A /* NetworkWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200000000000000000000A /* NetworkWidget.swift */; };
+		10100000000000000000000B /* NetworkLiveActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200000000000000000000B /* NetworkLiveActivityWidget.swift */; };
+		10100000000000000000000C /* NetworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000004 /* NetworkSnapshot.swift */; };
+		10100000000000000000000D /* NetworkSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000005 /* NetworkSnapshotStore.swift */; };
+		10100000000000000000000E /* NetworkActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000007 /* NetworkActivityAttributes.swift */; };
+		10100000000000000000000F /* NetworkSurfaceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000008 /* NetworkSurfaceConstants.swift */; };
+		101000000000000000000010 /* NetworkStatusWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 102000000000000000000010 /* NetworkStatusWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		101000000000000000000011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 102000000000000000000012 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		103000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 104000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 105000000000000000000002;
+			remoteInfo = NetworkStatusWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		106000000000000000000001 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				101000000000000000000010 /* NetworkStatusWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		102000000000000000000001 /* NetworkStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusApp.swift; sourceTree = "<group>"; };
+		102000000000000000000002 /* NetworkStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusModel.swift; sourceTree = "<group>"; };
+		102000000000000000000003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		102000000000000000000004 /* NetworkSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSnapshot.swift; sourceTree = "<group>"; };
+		102000000000000000000005 /* NetworkSnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSnapshotStore.swift; sourceTree = "<group>"; };
+		102000000000000000000006 /* NetworkSpeedSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedSampler.swift; sourceTree = "<group>"; };
+		102000000000000000000007 /* NetworkActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityAttributes.swift; sourceTree = "<group>"; };
+		102000000000000000000008 /* NetworkSurfaceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSurfaceConstants.swift; sourceTree = "<group>"; };
+		102000000000000000000009 /* NetworkWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWidgetBundle.swift; sourceTree = "<group>"; };
+		10200000000000000000000A /* NetworkWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWidget.swift; sourceTree = "<group>"; };
+		10200000000000000000000B /* NetworkLiveActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLiveActivityWidget.swift; sourceTree = "<group>"; };
+		10200000000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10200000000000000000000D /* NetworkStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkStatus.entitlements; sourceTree = "<group>"; };
+		10200000000000000000000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10200000000000000000000F /* NetworkStatusWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkStatusWidget.entitlements; sourceTree = "<group>"; };
+		102000000000000000000010 /* NetworkStatusWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NetworkStatusWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		102000000000000000000011 /* NetworkStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		102000000000000000000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		107000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		108000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				108000000000000000000002 /* App */,
+				108000000000000000000003 /* Shared */,
+				108000000000000000000004 /* Widget */,
+				108000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		108000000000000000000002 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000001 /* NetworkStatusApp.swift */,
+				102000000000000000000002 /* NetworkStatusModel.swift */,
+				102000000000000000000003 /* ContentView.swift */,
+				102000000000000000000012 /* Assets.xcassets */,
+				10200000000000000000000C /* Info.plist */,
+				10200000000000000000000D /* NetworkStatus.entitlements */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		108000000000000000000003 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000004 /* NetworkSnapshot.swift */,
+				102000000000000000000005 /* NetworkSnapshotStore.swift */,
+				102000000000000000000006 /* NetworkSpeedSampler.swift */,
+				102000000000000000000007 /* NetworkActivityAttributes.swift */,
+				102000000000000000000008 /* NetworkSurfaceConstants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		108000000000000000000004 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000009 /* NetworkWidgetBundle.swift */,
+				10200000000000000000000A /* NetworkWidget.swift */,
+				10200000000000000000000B /* NetworkLiveActivityWidget.swift */,
+				10200000000000000000000E /* Info.plist */,
+				10200000000000000000000F /* NetworkStatusWidget.entitlements */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		108000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				102000000000000000000011 /* NetworkStatus.app */,
+				102000000000000000000010 /* NetworkStatusWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		105000000000000000000001 /* NetworkStatus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 109000000000000000000003 /* Build configuration list for PBXNativeTarget "NetworkStatus" */;
+			buildPhases = (
+				110000000000000000000001 /* Sources */,
+				107000000000000000000001 /* Frameworks */,
+				113000000000000000000001 /* Resources */,
+				106000000000000000000001 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				111000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = NetworkStatus;
+			productName = NetworkStatus;
+			productReference = 102000000000000000000011 /* NetworkStatus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		105000000000000000000002 /* NetworkStatusWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 109000000000000000000006 /* Build configuration list for PBXNativeTarget "NetworkStatusWidget" */;
+			buildPhases = (
+				110000000000000000000002 /* Sources */,
+				107000000000000000000002 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkStatusWidget;
+			productName = NetworkStatusWidget;
+			productReference = 102000000000000000000010 /* NetworkStatusWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		104000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					105000000000000000000001 = {
+						CreatedOnToolsVersion = 26.0;
+						ProvisioningStyle = Automatic;
+					};
+					105000000000000000000002 = {
+						CreatedOnToolsVersion = 26.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 109000000000000000000001 /* Build configuration list for PBXProject "NetworkStatus" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 108000000000000000000001;
+			productRefGroup = 108000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				105000000000000000000001 /* NetworkStatus */,
+				105000000000000000000002 /* NetworkStatusWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		113000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101000000000000000000011 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		110000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101000000000000000000001 /* NetworkStatusApp.swift in Sources */,
+				101000000000000000000002 /* NetworkStatusModel.swift in Sources */,
+				101000000000000000000003 /* ContentView.swift in Sources */,
+				101000000000000000000004 /* NetworkSnapshot.swift in Sources */,
+				101000000000000000000005 /* NetworkSnapshotStore.swift in Sources */,
+				101000000000000000000006 /* NetworkSpeedSampler.swift in Sources */,
+				101000000000000000000007 /* NetworkActivityAttributes.swift in Sources */,
+				101000000000000000000008 /* NetworkSurfaceConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		110000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101000000000000000000009 /* NetworkWidgetBundle.swift in Sources */,
+				10100000000000000000000A /* NetworkWidget.swift in Sources */,
+				10100000000000000000000B /* NetworkLiveActivityWidget.swift in Sources */,
+				10100000000000000000000C /* NetworkSnapshot.swift in Sources */,
+				10100000000000000000000D /* NetworkSnapshotStore.swift in Sources */,
+				10100000000000000000000E /* NetworkActivityAttributes.swift in Sources */,
+				10100000000000000000000F /* NetworkSurfaceConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		111000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 105000000000000000000002 /* NetworkStatusWidget */;
+			targetProxy = 103000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		112000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		112000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		112000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/NetworkStatus.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.NetworkStatus;
+				PRODUCT_NAME = NetworkStatus;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		112000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/NetworkStatus.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.NetworkStatus;
+				PRODUCT_NAME = NetworkStatus;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		112000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Widget/NetworkStatusWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.NetworkStatus.widget;
+				PRODUCT_NAME = NetworkStatusWidget;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		112000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Widget/NetworkStatusWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.NetworkStatus.widget;
+				PRODUCT_NAME = NetworkStatusWidget;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		109000000000000000000001 /* Build configuration list for PBXProject "NetworkStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112000000000000000000001 /* Debug */,
+				112000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		109000000000000000000003 /* Build configuration list for PBXNativeTarget "NetworkStatus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112000000000000000000003 /* Debug */,
+				112000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		109000000000000000000006 /* Build configuration list for PBXNativeTarget "NetworkStatusWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112000000000000000000005 /* Debug */,
+				112000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 104000000000000000000001 /* Project object */;
+}
